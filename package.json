@@ -1,26 +1,43 @@
 {
-  "name": "master-electron",
+  "name": "ReadItEasy",
   "version": "1.0.0",
   "description": "Master Electron Course Code",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "watch": "nodemon --exec electron --inspect=5858 .",
-    "reset": "git reset --hard"
+    "reset": "git reset --hard",
+    "build": "electron-builder build"
   },
   "repository": "https://github.com/emptyshell/ReadItEasy.git",
+  "homepage": "https://github.com/emptyshell/ReadItEasy.git",
   "keywords": [
     "Electron",
     "Master Electron",
     "demo"
   ],
-  "author": "GitHub, Stackacademytv",
+  "author": "Valentin Suruceanu",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^9.0.0",
+    "electron-builder": "^22.11.1",
     "nodemon": "^2.0.0"
   },
   "dependencies": {
     "electron-window-state": "^5.0.3"
+  },
+  "build": {
+    "appId": "men.suruceanu.readiteasy",
+    "copyright": "Copyright Suruceanu.men",
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": "dmg"
+    },
+    "win": {
+      "target": "zip"
+    },
+    "linux": {
+      "category": "Utility"
+    }
   }
 }
