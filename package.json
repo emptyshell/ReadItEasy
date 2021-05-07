@@ -7,14 +7,14 @@
     "start": "electron .",
     "watch": "nodemon --exec electron --inspect=5858 .",
     "reset": "git reset --hard",
-    "build": "electron-builder build"
+    "build": "electron-builder build",
+    "release": "electron-builder build -p onTagOrDraft"
   },
   "repository": "https://github.com/emptyshell/ReadItEasy.git",
   "homepage": "https://github.com/emptyshell/ReadItEasy.git",
   "keywords": [
     "Electron",
-    "Master Electron",
-    "demo"
+    "Master Electron"
   ],
   "author": "Valentin Suruceanu",
   "license": "CC0-1.0",
@@ -24,11 +24,15 @@
     "nodemon": "^2.0.0"
   },
   "dependencies": {
+    "electron-updater": "^4.3.8",
     "electron-window-state": "^5.0.3"
   },
   "build": {
     "appId": "men.suruceanu.readiteasy",
     "copyright": "Copyright Suruceanu.men",
+    "publish": {
+      "provider": "github"
+    },
     "mac": {
       "category": "public.app-category.productivity",
       "target": "dmg"
