@@ -36,7 +36,11 @@
     },
     "mac": {
       "category": "public.app-category.productivity",
-      "target": "dmg"
+      "target": "pkg"
+    },
+    "pkg": {
+      "welcome": "./welcome.txt",
+      "license": "./license.txt"
     },
     "nsis": {
       "oneClick": false,
