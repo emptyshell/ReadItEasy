@@ -13,5 +13,11 @@ fi
 
 if [[ $(pwsh -c "Get-Module -listavailable | select-string -pattern 'MicrosoftTeams'") != "MicrosoftTeams" ]];
 then
-    pwsh -c "Install-Module MicrosoftTeams -Force"
+    if [[ $(pwsh -c "Install-Module MicrosoftTeams -Force") -eq 0 ]];
+    then
+        echo "Microsoft Teams Powershell module Installed successfuly" > /tmp/TVIT_installer.log
+    else
+        echo "Something went wrong due installing of Microsoft Teams Powershell Module" > /tmp/TVIT_installer.log
+        exit 1
+    fi
 fi
