@@ -20,14 +20,15 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^9.0.0",
-    "electron-builder": "^22.11.1",
+    "electron-builder": "^22.11.4",
     "nodemon": "^2.0.0"
   },
   "dependencies": {
-    "electron-updater": "^4.3.8",
+    "electron-updater": "^4.3.9",
     "electron-window-state": "^5.0.3"
   },
   "build": {
+    "productName": "ReadItEasy",
     "appId": "men.suruceanu.readiteasy",
     "copyright": "Copyright Suruceanu.men",
     "publish": {
@@ -37,8 +38,19 @@
       "category": "public.app-category.productivity",
       "target": "dmg"
     },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "guid": "b673a290-f9e5-4a41-b745-6d26371e3255"
+    },
+    "nsisWeb": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
     "win": {
-      "target": "zip"
+      "target": "nsis",
+      "requestedExecutionLevel": "requireAdministrator"
     },
     "linux": {
       "category": "Utility"
